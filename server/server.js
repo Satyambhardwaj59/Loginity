@@ -12,9 +12,15 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+app.use(cors({
+  origin: 'http://localhost:5173',            // reflect request origin (works like *)
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true        // allow cookies/auth headers
+}));
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({credentials: true}));
 
 // API End point
 app.get('/', (req, res) => {
