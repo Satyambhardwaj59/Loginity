@@ -104,7 +104,7 @@ export const logout = async (req, res) => {
 export const sendVerifyOtp = async (req, res) => {
     try {
 
-        const {userId} = req.body;
+        const {userId} = req;
 
         const user = await userModel.findById(userId);
         if(!user) {
@@ -139,7 +139,8 @@ export const sendVerifyOtp = async (req, res) => {
 }
 
 export const verifyEmail = async (req, res) => {
-    const {userId, otp} = req.body;
+    const {userId} = req;
+    const {otp} = req.body;
 
     if(!userId || !otp) {
         return res.json({success: false, message: "All fields are required"});
@@ -167,6 +168,17 @@ export const verifyEmail = async (req, res) => {
         await user.save();
         return res.json({success: true, message: 'Email verified successfully'});
         
+    } catch (error) {
+        return res.json({success: false, message: error.message});
+    }
+}
+
+
+// Check if user is authenticated
+export const isAuthenticated = async (req, res) => {
+    try {
+        
+        return res.json({success: true, message: "User is authenticated"});
     } catch (error) {
         return res.json({success: false, message: error.message});
     }
