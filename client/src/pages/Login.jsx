@@ -9,7 +9,7 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-const {backendUrl, setIsLoggedin} = useContext(AppContext)
+const {backendUrl, setIsLoggedin, getUserData} = useContext(AppContext)
 
     const [state, setState] = useState('Sign Up');
     const [name, setName] = useState('');
@@ -26,6 +26,7 @@ const {backendUrl, setIsLoggedin} = useContext(AppContext)
                 const {data } = await axios.post(backendUrl + '/api/auth/register', {name, email, password});
                 if(data.success){
                     setIsLoggedin(true);
+                    getUserData()
                     navigate('/')
                 }else{
                     toast.error(data.message)
@@ -34,6 +35,7 @@ const {backendUrl, setIsLoggedin} = useContext(AppContext)
                  const {data } = await axios.post(backendUrl + '/api/auth/login', {email, password});
                 if(data.success){
                     setIsLoggedin(true);
+                    getUserData()
                     navigate('/')
                 }else{
                     toast.error(data.message)
@@ -48,7 +50,7 @@ const {backendUrl, setIsLoggedin} = useContext(AppContext)
 
     return (
         <div className='flex items-center justify-center min-h-screen px-6 sm:px-0 bg-gradient-to-br from-blue-200 to-purple-400'>
-            <img onClick={() => navigate('/')} src={assets.loginity} alt="" className='absolute left-5 sm:left-20 top-5 w-28 max-h-[50px] sm:w-32 cursor-pointer' />
+            <img onClick={() => navigate('/')} src={assets.logo} alt="" className='absolute left-5 sm:left-20 top-5 rounded cursor-pointer' />
             <div className='bg-slate-900 p-10 rounded-lg w-full sm:w-96 text-indigo-300 text-sm'>
                 <h2 className='text-3xl font-semibold text-white text-center mb-3'>{state === 'Sign Up' ? 'Create Account' : 'Login'}</h2>
                 <p className='text-center text-sm mb-6'>{state === 'Sign Up' ? 'Create your Account' : 'Login to your Account!'}</p>
