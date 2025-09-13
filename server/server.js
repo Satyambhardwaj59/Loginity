@@ -16,7 +16,7 @@ connectDB();
 app.set("trust proxy", 1);
 
 app.use(cors({
-  origin: 'http://localhost:5173',            // reflect request origin (works like *)
+  origin: 'https://loginity-frontend.onrender.com' || 'http://localhost:5173',            // reflect request origin (works like *)
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true        // allow cookies/auth headers
