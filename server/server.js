@@ -1,37 +1,30 @@
-import express from 'express';
-import cors from 'cors';
-import 'dotenv/config';
-import cookieParser from 'cookie-parser';
-import connectDB from './config/mongodb.js';
-import authRouter from './routes/authRoutes.js';
-import userRouter from './routes/userRoutes.js';
-
+import express from "express";
+import cors from "cors";
+import "dotenv/config";
+import connectDB from "./config/mongodb.js";
+import authRouter from "./routes/authRoutes.js";
+import userRouter from "./routes/userRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-// ✅ Tell Express to trust Render's proxy (important for cookies)
-app.set("trust proxy", true);
-
 app.use(cors({
   origin: process.env.NODE_ENV === "production"
-    ? "https://loginity-frontend.onrender.com"
+    ? "https://loginity-auth-7y5t.vercel.app"
     : "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
-app.use(cookieParser());
 
 // API End point
-app.get('/', (req, res) => {
-  res.send('Hello Satyam from Express!');
+app.get("/", (req, res) => {
+  res.send("Hello Satyam from Express with JWT Headers!");
 });
-app.use('/api/auth', authRouter);
-app.use('/api/user', userRouter)
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
-app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port: ${PORT}`));

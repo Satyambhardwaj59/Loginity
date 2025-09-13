@@ -12,6 +12,14 @@ Loginity is a **full-stack authentication system** built with the **MERN stack**
 
 ---
 
+##  Production
+
+[![Live Site](https://loginity-auth-7y5t.vercel.app)](https://loginity-auth-7y5t.vercel.app/)
+
+Check out the live deployment of the project — works best on desktop and modern mobile browsers.
+
+
+
 ## ⚡ Features
 
 * ✅ User registration with email verification (OTP via Nodemailer)
