@@ -143,25 +143,33 @@ Take a quick look at the **Loginity authentication flow** 👇
 ---
 
 ### 1️⃣ Home Page  
+<div align="center">
 <img src="./assets/home.png" alt="Home Page" width="500" height="250" />
-
+</div>
 ---
 
 ### 2️⃣ Login Page  
+<div align="center">
 <img src="./assets/login.png" alt="Login Page" width="400" height="250" />
-
+</div>
 ---
 
 ### 3️⃣ OTP Verification  
+<div align="center">
 <img src="./assets/otp-verify.png" alt="Enter OTP UI" width="400" height="250" />
+</div>
 
 ---
 
 ### 4️⃣ Reset Password  
+<div align="center">
 <img src="./assets/reset-pass.png" alt="Reset Password UI" width="300" height="200" />
+</div>
 
 ---
 
 ### 5️⃣ New Password  
+<div align="center">
 <img src="./assets/new-pass.png" alt="Enter New Password UI" width="300" height="200" />
+</div>
 
