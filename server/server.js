@@ -12,6 +12,9 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+// ✅ Tell Express to trust Render's proxy (important for cookies)
+app.set("trust proxy", 1);
+
 app.use(cors({
   origin: 'http://localhost:5173',            // reflect request origin (works like *)
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],

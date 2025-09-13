@@ -146,12 +146,14 @@ Take a quick look at the **Loginity authentication flow** 👇
 <div align="center">
 <img src="./assets/home.png" alt="Home Page" width="500" height="250" />
 </div>
+
 ---
 
 ### 2️⃣ Login Page  
 <div align="center">
 <img src="./assets/login.png" alt="Login Page" width="400" height="250" />
 </div>
+
 ---
 
 ### 3️⃣ OTP Verification  
