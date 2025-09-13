@@ -1,4 +1,10 @@
-# ![Loginity Logo](./assets/logo.png) Loginity – MERN Authentication App
+<div align="center">
+
+<img src="./assets/logo.png" alt="Loginity Logo" width="200" />
+
+# 🔐 Loginity – MERN Authentication App  
+
+</div>
 
 Loginity is a **full-stack authentication system** built with the **MERN stack**. It provides a secure and modern authentication flow with **email verification via OTP**, **JWT-based session management**, and **password reset functionality**.
 
