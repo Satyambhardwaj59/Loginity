@@ -36,6 +36,7 @@ export const register = async (req, res) => {
   sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ required
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 });
+    console.log("👉 Cookie sent:", res.getHeaders()["set-cookie"]);
 
         // Sending welcome email
         const mailOptions = {
@@ -89,6 +90,7 @@ export const login = async (req, res) => {
   sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ required
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 });
+    console.log("👉 Cookie sent:", res.getHeaders()["set-cookie"]);
 
         return res.json({success: true, message: "Login succesfully!!"});
         
